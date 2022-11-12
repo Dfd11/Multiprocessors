@@ -84,12 +84,12 @@ void random_array(int *array, int size) {
 // @param array, an array of integer numbers.
 // @param size, the amount of numbers.
 // =================================================================
-void fill_array(int *array, int size) {
+void fill_array(int *array, int size, int top_value) {
 	int i;
 
 	srand(time(0));
 	for (i = 0; i < size; i++) {
-		array[i] = (i % TOP_VALUE) + 1;
+		array[i] = (i % top_value) + 1;
 	}
 }
 
@@ -99,11 +99,11 @@ void fill_array(int *array, int size) {
 // @param array, an array of integer numbers.
 // @param size, the amount of numbers.
 // =================================================================
-void display_array(const char *text, int *array) {
+void display_array(const char *text, int *array, int size) {
 	int i;
 
 	printf("%s = [%4i", text, array[0]);
-	for (i = 1; i < DISPLAY; i++) {
+	for (i = 1; i < size; i++) {
 		printf(",%4i", array[i]);
 	}
 	printf(", ... ,]\n");
